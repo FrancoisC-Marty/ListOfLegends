@@ -1,0 +1,31 @@
+@use '../../styles/vars';
+
+.header {
+
+  // height: 2rem;
+  width:100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+
+
+  // &-title {
+  //   font-family: LoL;
+  //   font-size: 2rem;
+  //   color: var(--text-lol);
+  // }
+
+  &-logo {
+    // width: 30em;
+    // height: 11.1rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 40%;
+    }
+
+    @media (min-width: 1400px) {
+      width: 30%;
+    }
+  }
+}

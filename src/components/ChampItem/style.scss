@@ -1,0 +1,6 @@
+@use '../../styles/vars';
+
+.champitem {
+  margin: (vars.$gutter / 2);
+  cursor: pointer;
+}

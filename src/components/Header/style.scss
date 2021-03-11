@@ -7,6 +7,7 @@
   height: fit-content;
   display: flex;
   justify-content: center;
+  margin-bottom: vars.$gutter;
 
 
   // &-title {
@@ -16,8 +17,6 @@
   // }
 
   &-logo {
-    // width: 30em;
-    // height: 11.1rem;
     width: 100%;
 
     @media (min-width: 768px) {

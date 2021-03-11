@@ -1,0 +1,23 @@
+@use '../../styles/vars';
+
+.footer {
+  padding: vars.$gutter;
+  margin-top: vars.$gutter;
+  text-align: center;
+
+  &-created {
+
+    &:last-child {
+      margin-top: (vars.$gutter / 2);
+    }
+
+    &-link {
+      color: var(--link);
+      text-decoration: underline;
+
+      &:visited {
+        color: var(--link-visited);
+      }
+    }
+  }
+}

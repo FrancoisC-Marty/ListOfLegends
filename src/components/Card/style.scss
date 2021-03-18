@@ -1,0 +1,61 @@
+@use '../../styles/vars';
+
+.overlay {
+  background-color: rgb(40, 44, 52, .8);
+  height: calc(100vh - 11rem);
+  width: 100%;
+  position: fixed;
+  top: 12.5em;
+  left: 0;
+  overflow: hidden;
+
+  @media (min-width: 400px) {
+    top: 7.5rem;
+  }
+
+  @media (min-width: 768px) {
+    height: calc(100vh - 12rem);
+    top: 7.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    height: calc(100vh - 18rem);
+    top: 13.5rem;
+  }
+}
+
+.card-image {
+  height: 50%;
+  width: 50%;
+
+  @media (min-width: 768px) {
+  height: 70%;
+  width: 70%;
+  }
+
+  @media (min-width: 1000px) {
+  height: 100%;
+  width: 100%;
+  }
+
+  &-container {
+    position: absolute;
+    top: 50vw;
+    right: calc(50vw - 235px);
+    width: fit-content;
+
+    @media (min-width: 400px) {
+      top: calc(50vw - 100px);
+    }
+
+    @media (min-width: 768px) {
+      top: calc(50vw - 305px);
+      right: calc(50vw - 200px);
+    }
+  
+    @media (min-width: 1000px) {
+      top: calc(50% - 281px);
+      right: calc(50% - 154px);
+    }
+  }
+}

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import './style.scss';
@@ -19,9 +19,14 @@ const ChampItem = ({
   isSelected: boolean,
 }) => (
   <li className="champitem">
-    <NavLink to={`${id}`} className="champitem-link">
-      <img className="champitem-img" src={image_url} alt={`miniature de ${name}`} />
-    </NavLink>
+    <Link to={`${id}`} className="champitem-link">
+      <motion.div
+        className="champitem-img-container"
+        layoutId={`card-img-container-${id}`}
+      >
+        <img className="champitem-img" src={image_url} alt={`miniature de ${name}`} />
+      </motion.div>
+    </Link>
   </li>
 );
 

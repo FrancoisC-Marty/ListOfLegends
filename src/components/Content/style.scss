@@ -1,0 +1,10 @@
+.app-container {
+  // height: calc(100vh - 4.5rem);
+  height: 100%;
+  margin-bottom: 5rem;
+  margin-top: 7.5rem;
+
+  @media (min-width: 1000px) {
+    margin-top: 13.5rem;
+  }
+}

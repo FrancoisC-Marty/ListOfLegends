@@ -1,0 +1,12 @@
+@use '../../styles/vars';
+
+.champlist {
+  width: 90%;
+  margin: auto;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

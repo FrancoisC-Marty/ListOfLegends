@@ -1,12 +1,19 @@
 @use '../../styles/vars';
 
 .header {
-
-  // height: 2rem;
+  position: fixed;
+  top: 0;
+  height: 7.5rem;
   width:100%;
-  height: fit-content;
   display: flex;
   justify-content: center;
+  margin-bottom: vars.$gutter;
+  background-color: var(--background);
+  z-index: 1;
+
+  @media (min-width: 1000px) {
+    height: 13.5rem;
+  }
 
 
   // &-title {
@@ -16,8 +23,6 @@
   // }
 
   &-logo {
-    // width: 30em;
-    // height: 11.1rem;
     width: 100%;
 
     @media (min-width: 768px) {

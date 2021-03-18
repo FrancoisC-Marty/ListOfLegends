@@ -1,8 +1,15 @@
 @use 'sass:color';
 
+$gutter: 1rem;
+
+$background: #282c34;
+$background-scaled: color.scale($background, $lightness: 10%);
+
 :root {
-  --background: #282c34;
+  --background: #{$background};
+  --background-scaled: #{$background-scaled};
   --text-clear: white;
   --text-lol: #FFD700;
-  --text-lol2: #FFFF00;
+  --link: lightcoral;
+  --link-visited: violet;
 }

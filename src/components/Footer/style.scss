@@ -1,0 +1,34 @@
+@use '../../styles/vars';
+
+.footer {
+  position: fixed;
+  padding: vars.$gutter;
+  margin-top: vars.$gutter;
+  text-align: center;
+  background-color: var(--background);
+  border-top: 1px solid var(--text-lol);
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    height: 4.5rem;
+  }
+
+  &-created {
+
+    &:last-child {
+      margin-top: (vars.$gutter / 2);
+    }
+
+    &-link {
+      color: var(--link);
+      text-decoration: underline;
+
+      &:visited {
+        color: var(--link-visited);
+      }
+    }
+  }
+}

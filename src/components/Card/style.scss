@@ -1,0 +1,141 @@
+@use '../../styles/vars';
+
+.overlay {
+  background-color: rgb(40, 44, 52, .8);
+  height: calc(100vh - 11rem);
+  width: 100%;
+  position: fixed;
+  top: 12.5em;
+  left: 0;
+  cursor: default;
+
+  @media (min-width: 400px) {
+    top: 7.5rem;
+  }
+
+  @media (min-width: 768px) {
+    height: calc(100vh - 12rem);
+    top: 7.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    height: calc(100vh - 18rem);
+    top: 13.5rem;
+  }
+}
+
+.card {
+
+  &-link {
+    color: var(--text-lol);
+    position: absolute;
+    top: 3px;
+    right: 160px;
+    font-size: 1.2rem;
+
+    @media (min-width: 400px) {
+      top: 3px;
+    }
+
+    @media (min-width: 768px) {
+      top: 3px;
+      right: 100px;
+    }
+  
+    @media (min-width: 1000px) {
+      top: 10px;
+      right: 10px;
+      font-size: 1.3rem;
+    }
+  }
+
+  &-image {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+    width: 70%;
+    }
+
+    @media (min-width: 1000px) {
+    height: 100%;
+    width: 100%;
+    }
+
+    &__gestion {
+      position: relative;
+      z-index: 1;
+      transform: translateX(0);
+      transition: transform 0.5s;
+
+      &--open {
+        z-index: 1;
+        transform: translateX(-77px);
+        transition: transform 0.5s;
+      
+        @media (min-width: 768px) {
+          transform: translateX(-108px);
+          transition: transform 0.5s;
+        }
+      
+        @media (min-width: 1000px) {
+          transform: translateX(-154px);
+          transition: transform 0.5s;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      position: absolute;
+      top: 50vw;
+      right: calc(50vw - 235px);
+      width: fit-content;
+
+      @media (min-width: 400px) {
+        top: calc(50vw - 100px);
+      }
+
+      @media (min-width: 768px) {
+        top: calc(50vw - 305px);
+        right: calc(50vw - 200px);
+      }
+    
+      @media (min-width: 1000px) {
+        top: calc(50% - 281px);
+        right: calc(50% - 154px);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      top: 266px;
+      right: 154px;
+      color: var(--text-lol);
+      background-color: darkred;
+      padding: 0.2rem;
+      width: 6rem;
+      text-align: center;
+      border-top-left-radius: 5px;
+
+      @media (min-width: 400px) {
+        top: 264px;
+        right: 154px;
+      }
+
+      @media (min-width: 768px) {
+        top: 375px;
+        right: 92px;
+      }
+    
+      @media (min-width: 1000px) {
+        top: 541px;
+        right: 0;
+      }
+    }
+  }
+}

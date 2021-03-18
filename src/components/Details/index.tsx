@@ -35,12 +35,16 @@ const Details = ({ champ, open }: {
   },
   open: boolean,
 }) => {
-  let stats = {};
+  const stats = [];
   let time = 0.15;
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(champ)) {
     if (key !== 'big_image_url' && key !== 'id' && key !== 'image_url' && key !== 'name' && key !== 'videogame_versions') {
-      stats = { ...stats, [rename(key)]: value };
+      stats.push({
+        property: rename(key),
+        value,
+        time,
+      });
 
       time += 0.1;
     }
@@ -49,9 +53,23 @@ const Details = ({ champ, open }: {
   console.log(stats);
   return (
     <div className="details-container">
-      <div className={open ? 'details detailed' : 'details'}>
-        <div className="details-title">details</div>
-      </div>
+      <section className={open ? 'details detailed' : 'details'}>
+        <div className="details-title">Detailed stats</div>
+        {open && stats.map((stat: {property: string, value: any, time:number}) => (
+          <motion.div
+            key={stat.property}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            transition={{ duration: 0.7, delay: stat.time }}
+            style={{ pointerEvents: 'auto' }}
+            className="details-stat"
+          >
+            <p className="details-stat__property">{stat.property}</p>
+            <p className="details-stat__value">{stat.value}</p>
+          </motion.div>
+        ))}
+      </section>
     </div>
   );
 };

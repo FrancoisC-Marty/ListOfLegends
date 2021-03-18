@@ -65,7 +65,6 @@ const Card = ({ id }: {id:number}) => {
                   {isOpen ? 'Details on' : 'Details off'}
                 </div>
               </div>
-              {/* {isOpen && <Details champ={champ} />} */}
               {/* @ts-ignore */}
               <Details champ={champ} open={isOpen} />
             </motion.div>

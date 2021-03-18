@@ -1,20 +1,31 @@
 /* eslint-disable camelcase */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+import Details from '../Details';
 
 import './style.scss';
 
 import champs from '../../data/champs';
 
 const Card = ({ id }: {id:number}) => {
+  const champ = champs.find((currentChamp) => currentChamp.id === id);
   // @ts-ignore
-  const { big_image_url, name } = champs.find((champ) => champ.id === id);
+  const { big_image_url, name } = champ;
 
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleOpen = ():void => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    document.title = `List of Legends | ${name}`;
+  });
+
+  const handleTitle = ():void => {
+    document.title = 'List of Legends';
+  };
 
   return (
     <>
@@ -37,17 +48,26 @@ const Card = ({ id }: {id:number}) => {
               layout
               layoutId={`card-image-container-${id}`}
             >
-              <Link className="card-link" to="/">
-                x
-              </Link>
-              <img
-                className="card-image"
-                src={big_image_url}
-                alt={`grande représentation de ${name}`}
-              />
-              <div className="card-image-btn" onClick={toggleOpen}>
-                {isOpen ? 'Details off' : 'Details on'}
+              <div className={isOpen ? 'card-image__gestion--open' : 'card-image__gestion'}>
+                <img
+                  className="card-image"
+                  src={big_image_url}
+                  alt={`grande représentation de ${name}`}
+                />
+                <Link
+                  onClick={handleTitle}
+                  className="card-link"
+                  to="/"
+                >
+                  x
+                </Link>
+                <div className="card-image-btn" onClick={toggleOpen}>
+                  {isOpen ? 'Details on' : 'Details off'}
+                </div>
               </div>
+              {/* {isOpen && <Details champ={champ} />} */}
+              {/* @ts-ignore */}
+              <Details champ={champ} open={isOpen} />
             </motion.div>
           </motion.div>
         </div>

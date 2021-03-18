@@ -1,0 +1,52 @@
+@use '../../styles/vars';
+
+.details {
+  padding: (vars.$gutter / 2);
+  position: absolute;
+  left: 0;
+  background-color: var(--background-scaled);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 50%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.5s;
+
+  @media (min-width: 768px) {
+    padding: vars.$gutter;
+    height: 70%;
+    width: 70%;
+  }
+
+  @media (min-width: 1000px) {
+    padding: vars.$gutter;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-container {
+    position: absolute;
+    height: 561px;
+    width: 308px;
+
+    @media (min-width: 1000px) {
+      height: 563px;
+      width: 308px;
+    }
+  }
+}
+
+.detailed {
+  transform: translateX(77px);
+  transition: transform 0.5s;
+
+  @media (min-width: 768px) {
+    transform: translateX(108px);
+    transition: transform 0.5s;
+  }
+
+  @media (min-width: 1000px) {
+    transform: translateX(154px);
+    transition: transform 0.5s;
+  }
+}

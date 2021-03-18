@@ -50,20 +50,47 @@
   }
 
   &-image {
-  height: 50%;
-  width: 50%;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
 
-  @media (min-width: 768px) {
-  height: 70%;
-  width: 70%;
-  }
+    @media (min-width: 768px) {
+    width: 70%;
+    }
 
-  @media (min-width: 1000px) {
-  height: 100%;
-  width: 100%;
-  }
+    @media (min-width: 1000px) {
+    height: 100%;
+    width: 100%;
+    }
+
+    &__gestion {
+      position: relative;
+      z-index: 1;
+      transform: translateX(0);
+      transition: transform 0.5s;
+
+      &--open {
+        z-index: 1;
+        transform: translateX(-77px);
+        transition: transform 0.5s;
+      
+        @media (min-width: 768px) {
+          transform: translateX(-108px);
+          transition: transform 0.5s;
+        }
+      
+        @media (min-width: 1000px) {
+          transform: translateX(-154px);
+          transition: transform 0.5s;
+        }
+      }
+    }
 
     &-container {
+      display: flex;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
       position: absolute;
       top: 50vw;
       right: calc(50vw - 235px);
@@ -86,7 +113,7 @@
 
     &-btn {
       position: absolute;
-      top: 94%;
+      top: 266px;
       right: 154px;
       color: var(--text-lol);
       background-color: darkred;
@@ -96,17 +123,17 @@
       border-top-left-radius: 5px;
 
       @media (min-width: 400px) {
-        top: 92.8%;
+        top: 264px;
         right: 154px;
       }
 
       @media (min-width: 768px) {
-        top: 94.6%;
+        top: 375px;
         right: 92px;
       }
     
       @media (min-width: 1000px) {
-        top: 95.5%;
+        top: 541px;
         right: 0;
       }
     }

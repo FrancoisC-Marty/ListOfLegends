@@ -5,16 +5,16 @@ import ChampItem from '../ChampItem';
 
 import './style.scss';
 
-import champs from '../../data/champs';
+import champs from '../../data/champions';
 
 const ChampList = ({ selectedId }: {selectedId: number}) => (
   <div className="champlist">
     <ul className="champlist-list">
       {champs.map((champ) => (
         <ChampItem
-          key={champ.id}
+          // key={champ.id}
           {...champ}
-          isSelected={champ.id === selectedId}
+          isSelected={Number(champ.id) === selectedId}
         />
       ))}
     </ul>

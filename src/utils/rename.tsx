@@ -10,8 +10,8 @@ const rename = (text: string): string => {
       return 'Attack damage per level';
     case 'attackrange':
       return 'Attack range';
-    case 'attackspeedoffset':
-      return 'Attack speed offset';
+    case 'attackspeed':
+      return 'Attack speed';
     case 'attackspeedperlevel':
       return 'Attack speed per level';
     case 'crit':

@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import './style.scss';
 import rename from '../../utils/rename';
 
-const Details = ({ champ, open }: {
-  champ: {
+const Details = ({ details, open, name }: {
+  details: {
     armor: number,
     armorperlevel: number,
     attackdamage: number,
@@ -34,25 +34,24 @@ const Details = ({ champ, open }: {
     videogame_versions: Array<number>,
   },
   open: boolean,
+  name: string,
 }) => {
   const stats = [];
   let time = 0.1;
   // eslint-disable-next-line no-restricted-syntax
-  for (const [key, value] of Object.entries(champ)) {
-    if (key !== 'big_image_url' && key !== 'id' && key !== 'image_url' && key !== 'name' && key !== 'videogame_versions' && key !== 'attackspeedoffset') {
-      stats.push({
-        property: rename(key),
-        value,
-        time,
-      });
+  for (const [key, value] of Object.entries(details)) {
+    stats.push({
+      property: rename(key),
+      value,
+      time,
+    });
 
-      time += 0.05;
-    }
+    time += 0.05;
   }
   return (
     <div className="details-container">
       <section className={open ? 'details detailed' : 'details'}>
-        <div className="details-title">{`${champ.name}'s Detailed stats`}</div>
+        <div className="details-title">{`${name}'s Detailed stats`}</div>
         {open && stats.map((stat: {property: string, value: any, time:number}) => (
           <motion.div
             key={stat.property}
@@ -73,8 +72,9 @@ const Details = ({ champ, open }: {
 };
 
 Details.propTypes = {
-  champ: PropTypes.object.isRequired,
+  details: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Details;

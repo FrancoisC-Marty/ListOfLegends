@@ -8,14 +8,18 @@ import { motion } from 'framer-motion';
 import './style.scss';
 
 const ChampItem = ({
-  image_url,
+  image,
   name,
   id,
   isSelected,
 }: {
-  image_url: string,
+  image: {
+    full: string,
+    sprite: string,
+    group: string,
+  },
   name: string,
-  id: number,
+  id: string,
   isSelected: boolean,
 }) => (
   <li className="champitem">
@@ -24,16 +28,16 @@ const ChampItem = ({
         className="champitem-img-container"
         layoutId={`card-img-container-${id}`}
       >
-        <img className="champitem-img" src={image_url} alt={`miniature de ${name}`} />
+        <img className="champitem-img" src={image.sprite} alt={`small pic of ${name}`} />
       </motion.div>
     </Link>
   </li>
 );
 
 ChampItem.propTypes = {
-  image_url: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
 };
 

@@ -9,12 +9,12 @@ import Details from '../Details';
 
 import './style.scss';
 
-import champs from '../../data/champs';
+import champs from '../../data/champions';
 
-const Card = ({ id }: {id:number}) => {
+const Card = ({ id }: {id:string}) => {
   const champ = champs.find((currentChamp) => currentChamp.id === id);
   // @ts-ignore
-  const { big_image_url, name } = champ;
+  const { image, name } = champ;
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = ():void => setIsOpen(!isOpen);
@@ -51,7 +51,7 @@ const Card = ({ id }: {id:number}) => {
               <div className={isOpen ? 'card-image__gestion--open' : 'card-image__gestion'}>
                 <img
                   className="card-image"
-                  src={big_image_url}
+                  src={image.full}
                   alt={`grande représentation de ${name}`}
                 />
                 <Link
@@ -66,7 +66,7 @@ const Card = ({ id }: {id:number}) => {
                 </div>
               </div>
               {/* @ts-ignore */}
-              <Details champ={champ} open={isOpen} />
+              <Details details={champ.stats} name={name} open={isOpen} />
             </motion.div>
           </motion.div>
         </div>
@@ -76,7 +76,7 @@ const Card = ({ id }: {id:number}) => {
 };
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Card;

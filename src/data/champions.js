@@ -1623,7 +1623,7 @@ const champions = [
     },
     image: {
       full: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Graves_0.jpg',
-      sprite: 'chhttp://ddragon.leagueoflegends.com/cdn/11.6.1/img/champion/Graves.png',
+      sprite: 'http://ddragon.leagueoflegends.com/cdn/11.6.1/img/champion/Graves.png',
       group: 'champion',
     },
     tags: [

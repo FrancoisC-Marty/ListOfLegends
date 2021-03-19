@@ -7,8 +7,7 @@ import Card from '../Card';
 import './style.scss';
 
 const Content = ({ match }: {match: any}) => {
-  let { id } = match.params;
-  id = Number(id);
+  const { id } = match.params;
   const imageHasLoaded = true;
 
   return (

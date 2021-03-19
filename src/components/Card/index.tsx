@@ -33,7 +33,7 @@ const Card = ({ id }: {id:string}) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
-        transition={{ duration: 0.5, delay: 0.15 }}
+        transition={{ duration: 0.5 }}
         style={{ pointerEvents: 'auto' }}
         className="overlay"
       >

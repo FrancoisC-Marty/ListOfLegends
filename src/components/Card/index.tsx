@@ -66,7 +66,7 @@ const Card = ({ id }: {id:string}) => {
                 </div>
               </div>
               {/* @ts-ignore */}
-              <Details details={champ.stats} name={name} open={isOpen} />
+              <Details details={champ.stats} {...champ} open={isOpen} />
             </motion.div>
           </motion.div>
         </div>

@@ -30,18 +30,24 @@
     width: 308px;
 
     @media (min-width: 1000px) {
-      height: 563px;
       width: 308px;
+      height: 562px;
+    }
+
+    @media (min-width: 1400px) {
+      width: 308px;
+      height: 563px;
     }
   }
 
   &-title {
     text-align: center;
     color: var(--text-lol);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 
     @media (min-width: 768px) {
       margin-bottom: vars.$gutter;
+      margin-bottom: 0.5rem;
     }
 
     @media (min-width: 1000px) {
@@ -68,12 +74,61 @@
     }
 
     &__property {
-      color: lightblue;
+      color: var(--text-details);
     }
 
     &__value {
-      color: rgb(64, 210, 247);
+      color: var(--text-value);
       font-weight: bold;
+    }
+  }
+
+  &-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: var(--text-lol);
+    background-color: var(--btn);
+    padding: 0.2rem;
+    width: 6rem;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+
+    @media (min-width: 400px) {
+
+    }
+
+    @media (min-width: 768px) {
+      padding: 0.2rem;
+    }
+  
+    @media (min-width: 1000px) {
+
+    }
+  }
+
+  &-lore {
+
+    &-title {
+      color: var(--text-value);
+      text-decoration: underline;
+      // font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &-text {
+      line-height: 0.7rem;
+      color: var(--text-details);
+
+      @media (min-width: 768px) {
+        line-height: 0.9rem;
+      }
+
+      @media (min-width: 1000px) {
+        line-height: 1.2rem;
+      }
     }
   }
 }

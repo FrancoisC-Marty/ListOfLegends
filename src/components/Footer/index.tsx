@@ -6,8 +6,8 @@ const Footer = () => (
   <div className="footer">
     <p className="footer-created">Made with passion and <a
       className="footer-created-link"
-      href="https://developers.pandascore.co/"
-    >PandaScore
+      href="https://www.riotgames.com/"
+    >Riot Games
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </a>
     </p>

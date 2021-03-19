@@ -9,7 +9,10 @@ $background-scaled: color.scale($background, $lightness: 10%);
   --background: #{$background};
   --background-scaled: #{$background-scaled};
   --text-clear: white;
+  --text-details: lightblue;
+  --text-value: rgb(64, 210, 247);
   --text-lol: #FFD700;
   --link: lightcoral;
   --link-visited: violet;
+  --btn: darkred;
 }

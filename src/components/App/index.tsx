@@ -13,7 +13,7 @@ const App = () => (
     <AnimateSharedLayout type="crossfade">
       <Header />
       <Router>
-        <Route path={['/:id', '/']} component={Content} />
+        <Route path={['/:id', '/']} exact component={Content} />
       </Router>
       <Footer />
     </AnimateSharedLayout>

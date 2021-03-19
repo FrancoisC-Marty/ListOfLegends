@@ -1,7 +1,7 @@
 @use '../../styles/vars';
 
 .overlay {
-  background-color: rgb(40, 44, 52, .8);
+  background-color: var(--background-opacity);
   height: calc(100vh - 11rem);
   width: 100%;
   position: fixed;

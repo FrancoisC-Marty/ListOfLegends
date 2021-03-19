@@ -8,6 +8,7 @@ $background-scaled: color.scale($background, $lightness: 10%);
 :root {
   --background: #{$background};
   --background-scaled: #{$background-scaled};
+  --background-opacity: rgb(40, 44, 52, .8);
   --text-clear: white;
   --text-details: lightblue;
   --text-value: rgb(64, 210, 247);

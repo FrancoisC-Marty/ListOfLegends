@@ -3,6 +3,23 @@
 .champlist {
   width: 90%;
   margin: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    @media (min-width: 1400px) {
+        width: 14px;
+    }
+
+    @media (min-width: 2000px) {
+        width: 18px;
+    }
+
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: var(--pokemon);
+    border-radius: 20px;
+}
 
   &-list {
     display: flex;

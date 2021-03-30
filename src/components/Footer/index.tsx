@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 
 import './style.scss';
@@ -8,14 +9,12 @@ const Footer = () => (
       className="footer-created-link"
       href="https://www.riotgames.com/"
     >Riot Games
-      {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </a>
     </p>
-    <p className="footer-created">Developped by <a
+    <p className="footer-created">API and front developped by <a
       className="footer-created-link"
       href="https://github.com/FrancoisC-Marty"
     >Elasnael
-      {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </a> © 2021
     </p>
   </div>

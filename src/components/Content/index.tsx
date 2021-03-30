@@ -22,15 +22,13 @@ const Content = ({ match }: {match: any}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/champion/')
+    axios.get('https://api-listoflegends.herokuapp.com/api/champion/')
       .then((response) => {
         setChamps(response.data);
         setIsLoading(false);
       })
       .catch((error) => console.error(error));
   }, []);
-
-  // console.log(id);
 
   if (champs.length > 0) {
     champs.forEach((champ: Champion) => ids.push(champ.id));

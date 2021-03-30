@@ -8,11 +8,13 @@ import { motion } from 'framer-motion';
 import Details from '../Details';
 
 import './style.scss';
+import { Champion } from '../../type';
 
-import champs from '../../data/champions';
-
-const Card = ({ id }: {id:string}) => {
-  const champ = champs.find((currentChamp) => currentChamp.id === id);
+const Card = ({ champions, id }: {
+  champions: Array<Champion>,
+  id: string,
+}) => {
+  const champ = champions.find((currentChamp: Champion) => currentChamp.id === id);
   // @ts-ignore
   const { image, name } = champ;
 
@@ -76,6 +78,7 @@ const Card = ({ id }: {id:string}) => {
 };
 
 Card.propTypes = {
+  champions: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
 };
 

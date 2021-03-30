@@ -2,19 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ChampItem from '../ChampItem';
+import { Champion } from '../../type';
 
 import './style.scss';
 
-import champs from '../../data/champions';
-
-const ChampList = ({ selectedId }: {selectedId: number}) => (
+const ChampList = ({ champions: champs }: {champions: Array<Champion>}) => (
   <div className="champlist">
     <ul className="champlist-list">
-      {champs.map((champ) => (
+      {champs.map((champ: Champion) => (
         <ChampItem
-          // key={champ.id}
           {...champ}
-          isSelected={Number(champ.id) === selectedId}
         />
       ))}
     </ul>
@@ -22,7 +19,7 @@ const ChampList = ({ selectedId }: {selectedId: number}) => (
 );
 
 ChampList.propTypes = {
-  selectedId: PropTypes.number.isRequired,
+  champions: PropTypes.array.isRequired,
 };
 
 export default ChampList;

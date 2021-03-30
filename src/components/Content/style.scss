@@ -8,3 +8,14 @@
     margin-top: 13.5rem;
   }
 }
+
+.loading {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1000px) {
+    height: 50vh;
+  }
+}

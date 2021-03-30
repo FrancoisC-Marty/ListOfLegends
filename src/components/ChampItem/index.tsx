@@ -11,7 +11,6 @@ const ChampItem = ({
   image,
   name,
   id,
-  isSelected,
 }: {
   image: {
     full: string,
@@ -20,7 +19,6 @@ const ChampItem = ({
   },
   name: string,
   id: string,
-  isSelected: boolean,
 }) => (
   <li className="champitem">
     <Link to={`${id}`} className="champitem-link">
@@ -38,7 +36,6 @@ ChampItem.propTypes = {
   image: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool.isRequired,
 };
 
 export default ChampItem;
